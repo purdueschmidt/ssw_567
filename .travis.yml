@@ -2,6 +2,7 @@ language: python
 python:
  - "3.5"
 
+before_script: cd HW02
 # command to run tests
 script:
- - python -m unittest TestTriangle
+ - python -m unittest TestTriangle.py
