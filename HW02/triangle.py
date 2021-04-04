@@ -56,13 +56,16 @@ def classify_triangle(side_a,side_b,side_c):
 
     # now we know that we have a valid triangle
     ret_text = ''
+
+    if (pow(a_lcl,2) + pow(b_lcl,2)) == pow(c_lcl,2):
+        ret_text = 'Right '
+
+
     if side_a == side_b and side_a == side_c:
         ret_text = 'Equilateral'
-    elif (pow(a_lcl,2) + pow(b_lcl,2)) == pow(c_lcl,2):
-        ret_text = 'Right'
     elif (side_a != side_b) and  (side_a != side_c) and (side_b != side_c):
-        ret_text = 'Scalene'
+        ret_text += 'Scalene'
     else:
-        ret_text = 'Isoceles'
+        ret_text += 'Isoceles'
 
     return ret_text

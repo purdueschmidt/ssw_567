@@ -18,26 +18,26 @@ class TestTriangles(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
 
     def testInvalidInputTriangle1(self):
-        print (classify_triangle(201,201,201))
-        self.assertEqual(classify_triangle(201,201,201),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle2(self): 
-        print (classify_triangle(201,201,1))
-        self.assertEqual(classify_triangle(201,201,1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle3(self): 
-        print (classify_triangle(201,1,201))
-        self.assertEqual(classify_triangle(201,1,201),'InvalidInput','Should be InvalidInput')        
-    def testInvalidInputTriangle4(self): 
-        print (classify_triangle(201,1,1))
-        self.assertEqual(classify_triangle(201,1,1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle5(self): 
-        print (classify_triangle(1,201,201))
-        self.assertEqual(classify_triangle(1,201,201),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle6(self): 
-        print (classify_triangle(1,201,1))
-        self.assertEqual(classify_triangle(1,201,1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle7(self): 
         print (classify_triangle(1,1,201))
         self.assertEqual(classify_triangle(1,1,201),'InvalidInput','Should be InvalidInput')
+    def testInvalidInputTriangle2(self): 
+        print (classify_triangle(1,201,1))
+        self.assertEqual(classify_triangle(1,201,1),'InvalidInput','Should be InvalidInput')
+    def testInvalidInputTriangle3(self): 
+        print (classify_triangle(201,1,1))
+        self.assertEqual(classify_triangle(201,1,1),'InvalidInput','Should be InvalidInput')  
+        
+    def testInvalidInputTriangle4(self): 
+        print (classify_triangle(0,1,1))
+        self.assertEqual(classify_triangle(0,1,1),'InvalidInput','Should be InvalidInput')
+    def testInvalidInputTriangle5(self): 
+        print (classify_triangle(1,0,1))
+        self.assertEqual(classify_triangle(1,0,1),'InvalidInput','Should be InvalidInput')
+    def testInvalidInputTriangle6(self): 
+        print (classify_triangle(1,1,0))
+        self.assertEqual(classify_triangle(1,1,0),'InvalidInput','Should be InvalidInput')
+        
+        
     def testInvalidInputTriangle8(self): 
         print (classify_triangle(200,200,200))
         self.assertNotEqual(classify_triangle(200,200,200),'InvalidInput','Should not be InvalidInput')
@@ -62,20 +62,14 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classify_triangle(1,0,1),'InvalidInput','Should be InvalidInput')
         
     def testInvalidInputTriangle15(self): 
-        print (classify_triangle(1.1,1.1,1.1))
-        self.assertEqual(classify_triangle(1.1,1.1,1.1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle16(self): 
         print (classify_triangle(1.1,1,1))
         self.assertEqual(classify_triangle(1.1,1,1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle17(self): 
+    def testInvalidInputTriangle16(self): 
         print (classify_triangle(1,1.1,1))
-        self.assertEqual(classify_triangle(1,1.1,1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle18(self): 
+        self.assertEqual(classify_triangle(11,1.1,1),'InvalidInput','Should be InvalidInput')
+    def testInvalidInputTriangle17(self): 
         print (classify_triangle(1,1,1.1))
         self.assertEqual(classify_triangle(1,1,1.1),'InvalidInput','Should be InvalidInput')
-    def testInvalidInputTriangle19(self): 
-        print (classify_triangle(1,1,0))
-        self.assertEqual(classify_triangle(1,1,0),'InvalidInput','Should be InvalidInput')
 
     def testNotATriangle1(self): 
         print (classify_triangle(5,8,3))
@@ -98,22 +92,22 @@ class TestTriangles(unittest.TestCase):
 
     def testRightTriangle1(self): 
         print (classify_triangle(3,4,5))
-        self.assertEqual(classify_triangle(3,4,5),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classify_triangle(3,4,5),'Right Scalene','3,4,5 is a Right triangle')
     def testRightTriangle2(self): 
         print (classify_triangle(3,5,4))
-        self.assertEqual(classify_triangle(3,5,4),'Right','3,5,4 is a Right triangle')
+        self.assertEqual(classify_triangle(3,5,4),'Right Scalene','3,5,4 is a Right triangle')
     def testRightTriangle3(self): 
         print (classify_triangle(4,3,5))
-        self.assertEqual(classify_triangle(4,3,5),'Right','4,3,5 is a Right triangle')
+        self.assertEqual(classify_triangle(4,3,5),'Right Scalene','4,3,5 is a Right triangle')
     def testRightTriangle4(self): 
         print (classify_triangle(4,5,3))
-        self.assertEqual(classify_triangle(4,5,3),'Right','4,5,3 is a Right triangle')
+        self.assertEqual(classify_triangle(4,5,3),'Right Scalene','4,5,3 is a Right triangle')
     def testRightTriangle5(self): 
         print (classify_triangle(5,3,4))
-        self.assertEqual(classify_triangle(5,3,4),'Right','5,3,4 is a Right triangle')
+        self.assertEqual(classify_triangle(5,3,4),'Right Scalene','5,3,4 is a Right triangle')
     def testRightTriangle6(self): 
         print (classify_triangle(5,4,3))
-        self.assertEqual(classify_triangle(5,4,3),'Right','5,4,3 is a Right triangle')
+        self.assertEqual(classify_triangle(5,4,3),'Right Scalene','5,4,3 is a Right triangle')
         
     def testEquilateralTriangle1(self): 
         print (classify_triangle(1,1,1))
@@ -129,26 +123,14 @@ class TestTriangles(unittest.TestCase):
         self.assertNotEqual(classify_triangle(2,1,1),'Equilateral','2,1,1 should Not be equilateral')
 
     def testScaleneTriangle1(self): 
-        print (classify_triangle(5,8,10))
-        self.assertEqual(classify_triangle(5,8,10),'Scalene','5,8,10 should be Scalene')
+        print (classify_triangle(2,3,4))
+        self.assertEqual(classify_triangle(2,3,4),'Scalene','5,8,10 should be Scalene')
     def testScaleneTriangle2(self): 
-        print (classify_triangle(5,8,10))
-        self.assertEqual(classify_triangle(5,10,8),'Scalene','5,8,10 should be Scalene')
+        print (classify_triangle(2,4,3))
+        self.assertEqual(classify_triangle(2,4,3),'Scalene','5,8,10 should be Scalene')
     def testScaleneTriangle3(self): 
-        print (classify_triangle(8,5,10))
-        self.assertEqual(classify_triangle(8,5,10),'Scalene','8,5,10 should be Scalene')
-    def testScaleneTriangle4(self): 
-        print (classify_triangle(8,10,5))
-        self.assertEqual(classify_triangle(8,10,5),'Scalene','8,10,5 should be Scalene')
-    def testScaleneTriangle5(self): 
-        print (classify_triangle(10,5,8))
-        self.assertEqual(classify_triangle(10,5,8),'Scalene','10,5,8 should be Scalene')
-    def testScaleneTriangle6(self): 
-        print (classify_triangle(10,8,5))
-        self.assertEqual(classify_triangle(10,8,5),'Scalene','10,8,5 should be Scalene')
-    def testScaleneTriangle7(self): 
-        print (classify_triangle(3,4,5))
-        self.assertNotEqual(classify_triangle(3,4,5),'Scalene','3,4,5 should Not be Scalene')
+        print (classify_triangle(3,2,4))
+        self.assertEqual(classify_triangle(3,2,4),'Scalene','8,5,10 should be Scalene')
         
     def testIsocelesTriangle1(self): 
         print (classify_triangle(1,2,2))
